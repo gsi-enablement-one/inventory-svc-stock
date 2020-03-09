@@ -11,5 +11,8 @@ spec:
     weight: 100
   tls:
     termination: edge
+  {{- if .Values.route.includeHost }}  
+  host: {{ include "starter-kit.host" . }}
+  {{- end }}
   wildcardPolicy: None
 {{- end }}
