@@ -4,8 +4,8 @@ kind: Route
 apiVersion: route.openshift.io/v1
 metadata:
   name: {{ $fullName }}
+status: {}  
 spec:
-  status: {}
   to:
     kind: Service
     name: {{ $fullName }}
