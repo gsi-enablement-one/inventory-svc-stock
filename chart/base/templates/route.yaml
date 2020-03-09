@@ -11,6 +11,5 @@ spec:
     weight: 100
   tls:
     termination: edge
-  host: {{ include "starter-kit.host" . }}
   wildcardPolicy: None
 {{- end }}
