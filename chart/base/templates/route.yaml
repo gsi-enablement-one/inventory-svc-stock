@@ -4,7 +4,12 @@ kind: Route
 apiVersion: route.openshift.io/v1
 metadata:
   name: {{ $fullName }}
-status: {}  
+status:
+  ingress:
+    - conditions: []
+      host: ""
+      routerName: router
+      wildcardPolicy: None
 spec:
   to:
     kind: Service
