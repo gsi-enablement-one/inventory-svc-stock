@@ -21,7 +21,6 @@ service:
 
 route:
   enabled: false
-  includeHost: false
 
 ingress:
   enabled: true

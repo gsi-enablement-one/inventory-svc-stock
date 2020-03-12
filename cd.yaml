@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: inventory-svc-stock
+spec:
+  destination:
+    namespace: inventory-test
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: inventory-svc-stock
+    repoURL: 'https://github.com/gsi-enablement-one/inventory-gitops'
+    targetRevision: test
+    helm:
+      valueFiles:
+        - values.yaml
+  project: inventory
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
